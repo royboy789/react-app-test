@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.scss";
+
+// Types
+import { RedditAPIResponse } from "./types/reddit";
+
+// Services
+import RedditApiService from "./services/redditApiService";
+
+// Components
+import Header from "./components/header/SiteHeader";
+import PostsList from "./components/posts/PostsList";
 
 function App() {
+  const [subreddit, setSubreddit] = useState("react");
+  const RedditService = new RedditApiService(subreddit);
+  const [posts, setPosts] = useState([] as any);
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    RedditService.setSub(subreddit);
+    
+    // in useEffect for dependency
+    function refreshPosts() {
+      RedditService.getPosts().then((redditData: RedditAPIResponse) => {
+        setPosts(redditData.children);
+      }).catch((err : any) => {
+        setPosts([]);
+      });
+    }
+    refreshPosts();
+
+  }, [subreddit]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id={"page"}>
+      <Header changeSubCallback={setSubreddit}></Header>
+      <div id={"content"}>
+        <h2>{subreddit}</h2>
+        <div className={"posts"}>
+          <PostsList posts={posts}></PostsList>
+        </div>
+      </div>
     </div>
   );
 }
