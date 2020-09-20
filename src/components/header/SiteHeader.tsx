@@ -2,9 +2,16 @@ import React, { useRef } from "react";
 
 
 export interface HeaderProps {
-  changeSubCallback: Function
+  changeSubCallback: (newValue: string|undefined) => void
 }
 
+/**
+ * Header Component
+ * 
+ * @TODO - Add sanitization prior to firing
+ * 
+ * @param props 
+ */
 const Header = (props: HeaderProps) => {
   const { changeSubCallback } = props;
   const redditRef = useRef<HTMLInputElement>(null);
