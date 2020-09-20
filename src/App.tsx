@@ -19,16 +19,7 @@ function App() {
   useEffect(() => {
     // eslint-disable-next-line
     RedditService.setSub(subreddit);
-    
-    // in useEffect for dependency
-    function refreshPosts() {
-      RedditService.getPosts().then((redditData: RedditAPIResponse) => {
-        setPosts(redditData.children);
-      }).catch((err : any) => {
-        setPosts([]);
-      });
-    }
-    refreshPosts();
+    RedditService.getPosts().then((res) => {setPosts(res.children)});
 
   }, [subreddit]);
 
