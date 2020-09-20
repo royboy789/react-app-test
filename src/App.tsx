@@ -12,7 +12,7 @@ import Header from "./components/header/SiteHeader";
 import PostsList from "./components/posts/PostsList";
 
 function App() {
-  const [subreddit, setSubreddit] = useState("react");
+  const [subreddit, setSubreddit] = useState("reactjs");
   const RedditService = new RedditApiService(subreddit);
   const [posts, setPosts] = useState([] as any);
 
@@ -35,10 +35,10 @@ function App() {
   return (
     <div id={"page"}>
       <Header changeSubCallback={setSubreddit}></Header>
-      <div id={"content"}>
+      <div id={"current-subreddit"}>
         <h2>{subreddit}</h2>
         <div className={"posts"}>
-          <PostsList posts={posts}></PostsList>
+          <PostsList posts={posts}/>
         </div>
       </div>
     </div>

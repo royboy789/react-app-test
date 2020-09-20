@@ -27,7 +27,6 @@ export default class RedditApiService {
    */
   private setSubreddit(subreddit: string) {
     this.subreddit = subreddit;
-    console.log( 'setting subreddit: ' + this.subreddit );
     return this.subreddit;
   }
 
