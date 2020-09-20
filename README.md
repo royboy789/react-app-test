@@ -11,15 +11,18 @@ Show paginated posts for a given reddit
 
 - open terminal and set working directory to `reddit-api/app`
 - run `npm install`
-- run `npm start:server`
+- run `npm run start:server`
 - open a new terminal tab or window in the same directory
-- run `npm start`
+- run `npm run start`
 
 ### Other Commands
 
 - `build` - build command
 - `test` - run tests (jest)
+- `npm test -- --coverage --watchAll=false` - run tests with coverage reporting
 
 ## Technologies / Libraries
 
 Any libraries used can be found in `/app/package.json` unless listed here. React app created using [facebook/create-react-app](https://github.com/facebook/create-react-app)
+
+- ES6 / TypeScript
