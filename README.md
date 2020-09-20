@@ -23,8 +23,8 @@ Show paginated posts for a given reddit
 
 ## Technologies / Libraries
 
-Any libraries used can be found in `/app/package.json` unless listed here. React app created using [facebook/create-react-app](https://github.com/facebook/create-react-app)
-
+Any libraries used can be found in `/app/package.json` unless listed here. 
+- React app created using [facebook/create-react-app](https://github.com/facebook/create-react-app)
 - ES6 / TypeScript
 
 ## Coverage Report
