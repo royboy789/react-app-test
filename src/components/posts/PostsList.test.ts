@@ -7,10 +7,11 @@ import { RedditPost } from "../../types/reddit";
 // components
 import PostLists from "./PostsList";
 
-describe("PostsLists Component", () => {
+describe("PostsLists", () => {
   let posts: Array<RedditPost> = [];
   
-  test( 'Does No Posts Found with empty array', () => {
+  it( 'Should show No Posts Found with empty array', () => {
     expect(2-1).toEqual(1);
   });
+  
 });

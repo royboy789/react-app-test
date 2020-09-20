@@ -11,22 +11,28 @@ import { RedditAPIResponse } from "./../types/reddit";
 // Service
 import RedditApiService from "./redditApiService";
 
-describe("redditApiService::setSub", () => {
-  const redditService = new RedditApiService("reactjs");
-
-  it("should set the subreddit properly", () => {
-    expect(redditService.setSub("reddit")).toEqual("reddit");
+describe('RedditApiService', () => {
+  describe("redditApiService::setSub", () => {
+    const redditService = new RedditApiService("reactjs");
+  
+    it("should set the subreddit properly", () => {
+      expect(redditService.setSub("reddit")).toEqual("reddit");
+    });
   });
 
-  it("should fetch posts properly", async () => {
-    const data : RedditAPIResponse = {
-      after: 'string',
-      before: 'string',
-      children: [],
-      dis: 0,
-      modhash: 'string'
-    }
+  describe('redditApiService::getPosts', () => {
 
-    axiosMock.mockImplementationOnce(() => <any>Promise.resolve(data));
-  });
-});
+    it("should fetch posts properly", async () => {
+      const data : RedditAPIResponse = {
+        after: 'string',
+        before: 'string',
+        children: [],
+        dis: 0,
+        modhash: 'string'
+      }
+  
+      axiosMock.mockImplementationOnce(() => <any>Promise.resolve(data));
+      expect(1).toEqual(1);
+    });
+  })
+})
