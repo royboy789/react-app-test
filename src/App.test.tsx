@@ -1,5 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, RenderResult, cleanup } from '@testing-library/react';
+import { mocked } from 'ts-jest/utils';
+import userEvent from "@testing-library/user-event";
 
 // Types
 import { RedditAPIResponse } from "./types/reddit";
@@ -8,36 +10,52 @@ import { RedditAPIResponse } from "./types/reddit";
 import RedditApiService from './services/redditApiService';
 // make RedditApiServica a mock
 jest.mock('./services/redditApiService');
-
-// Components
-import App from './App';
-
-beforeEach(() => {
-  RedditApiService.mockClear();
-  RedditApiService.mockImplementation(() => {
-    return {
-      setSub: () => 'reactjs',
-      getPosts: () => {
-        return new Promise((resolve, reject) => {
-          resolve([]);
-        });
-      }
-    }
+RedditApiService.prototype.getPosts = jest.fn(() => {
+  return new Promise((resolve, reject) => {
+    resolve({
+      children: []
+    });
   });
 });
 
-describe('app init', () => {
-  //const { getByText } = render(<App/>);
-  // working with passing as string
-  const { getByText } = render('<App/>');
-  
-  test('subreddit default loads', () => {
-    const linkElement = getByText('reactjs');
+// Components
+import App from './App';
+import { act } from 'react-dom/test-utils';
 
-    console.log(linkElement);
-    
-    //expect(linkElement).toBeInTheDocument();
-    expect(2-1).toEqual(1);
+afterEach(cleanup);
+
+describe('App', () => {
+
+  let app: RenderResult;
+  let subreddit: string = 'reactjs';
+  let redditApi : RedditApiService;
+
+  describe('default render', () => {
+
+    beforeEach(async () => {
+      await act(async() => {
+        app = render(<App/>);
+      });
+    });
+
+    it('should set reactjs as the default subreddit', () => {
+      const titleElement = app.getByTestId('current-subreddit-title');
+      expect(titleElement.textContent).toContain('reactjs');
+    });
+
+    it('should fire dispatch when form is header is submitted', async () => {
+      const inputElement = app.getByLabelText("Change Subreddit:");
+      userEvent.type(inputElement, 'wordpress');
+      let titleElement: any;
+      
+      await act(async() => {
+        userEvent.click(app.getByTestId("change-subreddit-submit"));
+        titleElement = app.getByTestId('current-subreddit-title');
+      });
+
+      expect(titleElement.textContent).toContain('wordpress');
+    });
+
   })
 
 });

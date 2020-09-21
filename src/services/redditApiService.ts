@@ -64,6 +64,4 @@ export default class RedditApiService {
     });
     return await res.data;
   }
-
-  private afterFetchUpdate(data: RedditAPIResponse) {}
 }
