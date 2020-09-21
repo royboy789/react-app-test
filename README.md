@@ -33,9 +33,9 @@ Any libraries used can be found in `/app/package.json` unless listed here.
 -----------------------|----------|----------|----------|----------|-------------------|
 File                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 -----------------------|----------|----------|----------|----------|-------------------|
-All files              |    31.71 |    27.27 |    33.33 |     32.1 |                   |
- src                   |        0 |        0 |        0 |        0 |                   |
-  App.tsx              |        0 |      100 |        0 |        0 |... 17,19,21,22,26 |
+All files              |    47.47 |    33.33 |    45.95 |    47.47 |                   |
+ src                   |    22.64 |     5.88 |    23.81 |    22.64 |                   |
+  App.tsx              |      100 |      100 |      100 |      100 |                   |
   index.tsx            |        0 |      100 |      100 |        0 |              7,17 |
   serviceWorker.tsx    |        0 |        0 |        0 |        0 |... 32,133,135,138 |
  src/components/header |      100 |      100 |      100 |      100 |                   |
@@ -43,12 +43,17 @@ All files              |    31.71 |    27.27 |    33.33 |     32.1 |            
  src/components/posts  |      100 |      100 |      100 |      100 |                   |
   Posts.tsx            |      100 |      100 |      100 |      100 |                   |
   samplePostData.js    |        0 |        0 |        0 |        0 |                   |
- src/services          |    53.33 |      100 |       50 |    53.33 |                   |
-  redditApiService.ts  |    53.33 |      100 |       50 |    53.33 |... 49,50,51,60,65 |
+ src/reducers          |    69.23 |      100 |    33.33 |    69.23 |                   |
+  pageReducer.ts       |    69.23 |      100 |    33.33 |    69.23 |       24,25,26,43 |
+ src/services          |    53.33 |      100 |       60 |    53.33 |                   |
+  redditApiService.ts  |    53.33 |      100 |       60 |    53.33 |... 49,50,51,60,65 |
  src/types             |        0 |        0 |        0 |        0 |                   |
+  page.ts              |        0 |        0 |        0 |        0 |                   |
   reddit.ts            |        0 |        0 |        0 |        0 |                   |
 -----------------------|----------|----------|----------|----------|-------------------|
 
-Test Suites: 1 failed, 3 passed, 4 total
-Tests:       1 failed, 8 passed, 9 total
+Test Suites: 5 passed, 5 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        3.585s
 ```
