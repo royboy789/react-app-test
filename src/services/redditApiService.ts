@@ -62,6 +62,8 @@ export default class RedditApiService {
         "Access-Control-Allow-Origin": "*",
       },
     });
-    return await res.data;
+    
+    const data = await res.data;
+    return data;
   }
 }
