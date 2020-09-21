@@ -18,20 +18,21 @@ const Header = (props: HeaderProps) => {
   /**
    * Return if there is a value in the input
    */
-  function isValueSet() : boolean {
+  function getValue() : boolean | string {
     if ( ! redditRef.current || ! redditRef.current.value ) {
       return false;
     }
-    return true;
+    return redditRef.current.value;
   }
 
   /**
    * Calls changeSubCallback after sanitization / validation
    * 
-   * @param inputString 
+   * @param event
    */
-  function sanitize_input(inputString: string|undefined) : void {
-    if(isValueSet()) {
+  function sanitize_input(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) : void {
+    const inputString = getValue();
+    if(inputString) {
       changeSubCallback(inputString as string);
     }
   };
@@ -51,9 +52,7 @@ const Header = (props: HeaderProps) => {
           id={'change-subreddit-submit'}
           data-testid={'change-subreddit-submit'}
           type={"submit"}
-          onClick={() => {
-            sanitize_input(redditRef?.current?.value);
-          }}
+          onClick={sanitize_input}
         >
           Switch subreddit
         </button>
