@@ -29,31 +29,37 @@ Any libraries used can be found in `/app/package.json` unless listed here.
 
 ## Coverage Report
 
-```
+```@text
+ PASS  src/reducers/pageReducer.test.ts
+ PASS  src/components/posts/Posts.test.tsx
+ PASS  src/components/header/SiteHeader.test.tsx
+ PASS  src/services/redditApiService.test.tsx
+ PASS  src/App.test.tsx
 -----------------------|----------|----------|----------|----------|-------------------|
 File                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 -----------------------|----------|----------|----------|----------|-------------------|
-All files              |    47.47 |    33.33 |    45.95 |    47.47 |                   |
- src                   |    22.64 |     5.88 |    23.81 |    22.64 |                   |
+All files              |      100 |      100 |      100 |      100 |                   |
+ src                   |      100 |      100 |      100 |      100 |                   |
+  App.scss             |      100 |      100 |      100 |      100 |                   |
   App.tsx              |      100 |      100 |      100 |      100 |                   |
-  index.tsx            |        0 |      100 |      100 |        0 |              7,17 |
-  serviceWorker.tsx    |        0 |        0 |        0 |        0 |... 32,133,135,138 |
+  react-app-env.d.ts   |        0 |        0 |        0 |        0 |                   |
  src/components/header |      100 |      100 |      100 |      100 |                   |
   SiteHeader.tsx       |      100 |      100 |      100 |      100 |                   |
  src/components/posts  |      100 |      100 |      100 |      100 |                   |
   Posts.tsx            |      100 |      100 |      100 |      100 |                   |
+  posts.scss           |      100 |      100 |      100 |      100 |                   |
   samplePostData.js    |        0 |        0 |        0 |        0 |                   |
- src/reducers          |    69.23 |      100 |    33.33 |    69.23 |                   |
-  pageReducer.ts       |    69.23 |      100 |    33.33 |    69.23 |       24,25,26,43 |
- src/services          |    53.33 |      100 |       60 |    53.33 |                   |
-  redditApiService.ts  |    53.33 |      100 |       60 |    53.33 |... 49,50,51,60,65 |
+ src/reducers          |      100 |      100 |      100 |      100 |                   |
+  pageReducer.ts       |      100 |      100 |      100 |      100 |                   |
+ src/services          |      100 |      100 |      100 |      100 |                   |
+  redditApiService.ts  |      100 |      100 |      100 |      100 |                   |
  src/types             |        0 |        0 |        0 |        0 |                   |
   page.ts              |        0 |        0 |        0 |        0 |                   |
   reddit.ts            |        0 |        0 |        0 |        0 |                   |
 -----------------------|----------|----------|----------|----------|-------------------|
 
 Test Suites: 5 passed, 5 total
-Tests:       11 passed, 11 total
+Tests:       14 passed, 14 total
 Snapshots:   0 total
-Time:        3.585s
+Time:        3.939s
 ```
