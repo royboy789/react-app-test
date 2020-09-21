@@ -9,7 +9,7 @@ import RedditApiService from "./services/redditApiService";
 
 // Components
 import Header from "./components/header/SiteHeader";
-import PostsList from "./components/posts/PostsList";
+import Posts from "./components/posts/Posts";
 
 function App() {
   const [subreddit, setSubreddit] = useState("reactjs");
@@ -29,7 +29,7 @@ function App() {
       <div id={"current-subreddit"}>
         <h2>{subreddit}</h2>
         <div className={"posts"}>
-          <PostsList posts={posts}/>
+          <Posts posts={posts}/>
         </div>
       </div>
     </div>

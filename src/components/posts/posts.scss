@@ -1,0 +1,28 @@
+#posts-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 25% auto;
+
+  & > div {
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .posts-nav {
+    grid-column-start: 0;
+
+    .posts-nav-single {
+      cursor: pointer;
+      
+      &.active {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .posts-active {
+    grid-column-start: 2;
+  }
+}

@@ -33,15 +33,16 @@ Any libraries used can be found in `/app/package.json` unless listed here.
 -----------------------|----------|----------|----------|----------|-------------------|
 File                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 -----------------------|----------|----------|----------|----------|-------------------|
-All files              |    23.75 |       15 |       25 |    24.05 |                   |
+All files              |    31.71 |    27.27 |    33.33 |     32.1 |                   |
  src                   |        0 |        0 |        0 |        0 |                   |
   App.tsx              |        0 |      100 |        0 |        0 |... 17,19,21,22,26 |
   index.tsx            |        0 |      100 |      100 |        0 |              7,17 |
   serviceWorker.tsx    |        0 |        0 |        0 |        0 |... 32,133,135,138 |
  src/components/header |      100 |      100 |      100 |      100 |                   |
   SiteHeader.tsx       |      100 |      100 |      100 |      100 |                   |
- src/components/posts  |        0 |        0 |        0 |        0 |                   |
-  PostsList.tsx        |        0 |        0 |        0 |        0 |    11,12,14,16,24 |
+ src/components/posts  |      100 |      100 |      100 |      100 |                   |
+  Posts.tsx            |      100 |      100 |      100 |      100 |                   |
+  samplePostData.js    |        0 |        0 |        0 |        0 |                   |
  src/services          |    53.33 |      100 |       50 |    53.33 |                   |
   redditApiService.ts  |    53.33 |      100 |       50 |    53.33 |... 49,50,51,60,65 |
  src/types             |        0 |        0 |        0 |        0 |                   |
@@ -49,5 +50,5 @@ All files              |    23.75 |       15 |       25 |    24.05 |            
 -----------------------|----------|----------|----------|----------|-------------------|
 
 Test Suites: 1 failed, 3 passed, 4 total
-Tests:       1 failed, 6 passed, 7 total
+Tests:       1 failed, 8 passed, 9 total
 ```
