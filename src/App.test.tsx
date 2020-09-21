@@ -18,6 +18,10 @@ RedditApiService.prototype.getPosts = jest.fn(() => {
   });
 });
 
+// reducers
+// @TODO - make this a mock to remove it from App tests
+import pageReducer from './reducers/pageReducer';
+
 // Components
 import App from './App';
 import { act } from 'react-dom/test-utils';

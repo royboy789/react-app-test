@@ -52,6 +52,9 @@
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
-    }
+    },
+    "collectCoverageFrom": [
+      "!<rootDir>/src/index.tsx"
+    ]
   }
 }

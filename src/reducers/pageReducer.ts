@@ -20,13 +20,6 @@ export const initialPage: Page = {
   per_page: 10,
 };
 
-function getPostsFromService(subreddit: string) : any {
-  const redditService = new RedditApiService(subreddit);
-  redditService.getPosts().then((res) => {
-    console.log( res );
-  });
-}
-
 const pageReducer: Reducer<Page, PageAction> = (
   state: Page,
   action: PageAction
@@ -37,7 +30,7 @@ const pageReducer: Reducer<Page, PageAction> = (
       newPage = { ...state, subreddit: action.payload?.subreddit };
       return newPage;
     case PAGE_ACTIONS.SET_POSTS:
-      newPage = { ...state, posts: action.payload?.posts};
+      newPage = { ...state, posts: action.payload?.posts };
       return newPage;
   }
   return state;
