@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 
 export interface HeaderProps {
-  changeSubCallback: (newValue: string) => void
+  changeSubreddit: (newValue: string) => void
 }
 
 /**
@@ -12,7 +12,7 @@ export interface HeaderProps {
  * @param props 
  */
 const Header = (props: HeaderProps) => {
-  const { changeSubCallback } = props;
+  const { changeSubreddit } = props;
   const redditRef = useRef<HTMLInputElement>(null);
   
   /**
@@ -33,7 +33,7 @@ const Header = (props: HeaderProps) => {
   function sanitize_input(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) : void {
     const inputString = getValue();
     if(inputString) {
-      changeSubCallback(inputString as string);
+      changeSubreddit(inputString as string);
     }
   };
 

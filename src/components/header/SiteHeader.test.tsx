@@ -16,7 +16,7 @@ describe("SiteHeader", () => {
 
   beforeEach(async () => {
     changeHandler = jest.fn();
-    header = render(<SiteHeader changeSubCallback={changeHandler} />);
+    header = render(<SiteHeader changeSubreddit={changeHandler} />);
     inputElement = header.getByLabelText("Change Subreddit:");
     newSubreddit = "hiroy";
   });
