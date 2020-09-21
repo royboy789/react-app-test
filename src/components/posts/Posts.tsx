@@ -8,9 +8,15 @@ interface PostsListsData {
   posts: Array<RedditPost>;
 }
 
+/**
+ * Posts Component
+ * 
+ * @param param0 
+ */
 function Posts({ posts }: PostsListsData) {
   const [activePost, setActivePost] = useState(0);
 
+  // Posts for navigation
   const Posts = posts.length ? (
     <div data-testid={"posts-navigation"}>
       {posts.map((post, index) => {
@@ -32,6 +38,7 @@ function Posts({ posts }: PostsListsData) {
     </div>
   );
 
+  // ActivePost markup
   const ActivePost = posts[activePost] ? (
     <div className={"post"}>
       <h3 className={"post-title"} data-testid={"ActiveTitle"}>

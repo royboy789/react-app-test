@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 
-
 export interface HeaderProps {
   changeSubreddit: (newValue: string) => void
 }
