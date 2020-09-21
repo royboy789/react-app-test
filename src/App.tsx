@@ -70,7 +70,7 @@ function App() {
   }
 
   /**
-   * @TODO - add react-area where I can
+   * @TODO - add react-aria where I can
    */
   return (
     <div id={"page"} className={"page"} data-testid={"page"}>
