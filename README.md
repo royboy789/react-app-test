@@ -33,13 +33,13 @@ Any libraries used can be found in `/app/package.json` unless listed here.
 -----------------------|----------|----------|----------|----------|-------------------|
 File                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 -----------------------|----------|----------|----------|----------|-------------------|
-All files              |    10.81 |        0 |       10 |    10.96 |                   |
+All files              |    23.75 |       15 |       25 |    24.05 |                   |
  src                   |        0 |        0 |        0 |        0 |                   |
   App.tsx              |        0 |      100 |        0 |        0 |... 17,19,21,22,26 |
   index.tsx            |        0 |      100 |      100 |        0 |              7,17 |
   serviceWorker.tsx    |        0 |        0 |        0 |        0 |... 32,133,135,138 |
- src/components/header |        0 |      100 |        0 |        0 |                   |
-  SiteHeader.tsx       |        0 |      100 |        0 |        0 |        3,4,6,8,13 |
+ src/components/header |      100 |      100 |      100 |      100 |                   |
+  SiteHeader.tsx       |      100 |      100 |      100 |      100 |                   |
  src/components/posts  |        0 |        0 |        0 |        0 |                   |
   PostsList.tsx        |        0 |        0 |        0 |        0 |    11,12,14,16,24 |
  src/services          |    53.33 |      100 |       50 |    53.33 |                   |
@@ -47,6 +47,7 @@ All files              |    10.81 |        0 |       10 |    10.96 |            
  src/types             |        0 |        0 |        0 |        0 |                   |
   reddit.ts            |        0 |        0 |        0 |        0 |                   |
 -----------------------|----------|----------|----------|----------|-------------------|
-Test Suites: 1 failed, 2 passed, 3 total  
-Tests:       1 failed, 3 passed, 4 total
+
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       1 failed, 6 passed, 7 total
 ```
