@@ -4,7 +4,7 @@ import { mocked } from 'ts-jest/utils';
 import userEvent from "@testing-library/user-event";
 
 // Types
-import { RedditAPIResponse } from "./types/reddit";
+import { RedditAPIData } from "./types/reddit";
 
 // Services
 import RedditApiService from './services/redditApiService';

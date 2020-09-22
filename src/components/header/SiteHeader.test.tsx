@@ -18,7 +18,7 @@ describe("SiteHeader", () => {
     changeHandler = jest.fn();
     header = render(<SiteHeader changeSubreddit={changeHandler} />);
     inputElement = header.getByLabelText("Change Subreddit:");
-    newSubreddit = "hiroy";
+    newSubreddit = "wordpress";
   });
 
   it("should set input field properly", () => {

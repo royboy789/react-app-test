@@ -1,7 +1,7 @@
 // types
-import { RedditAPIResponse, RedditPost } from "./../types/reddit";
+import { RedditAPIResponse } from "./../types/reddit";
 
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 export default class RedditApiService {
   /**
@@ -9,7 +9,8 @@ export default class RedditApiService {
    */
   private redditBase: string = "https://reddit.com/r/";
   private subreddit: string;
-  private perPage: number = 10;
+
+  private perPage: number = 98;
   private page: number = 1;
   private lastID: string;
 
@@ -41,14 +42,15 @@ export default class RedditApiService {
 
   /**
    * Get Posts from subreddit
+   * 
    */
   public async getPosts() {
     const url = new URL(this.redditBase + this.subreddit + ".json");
+    
+    // @TODO make this an argument
     url.searchParams.append("limit", this.perPage.toString());
-
-    let posts : any = [];
-    posts = await this.fetchPosts(url);
-    return posts;
+    let redditResponse = await this.fetchPosts(url);
+    return redditResponse.data;
   }
 
   /**
@@ -57,13 +59,11 @@ export default class RedditApiService {
    * @param url 
    */
   private async fetchPosts(url: URL)  {
-    const res = await axios.get("http://localhost:8080/?url=" + url.href, {
+    const res : RedditAPIResponse = await axios.get("http://localhost:8080/?url=" + url.href, {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
     });
-    
-    const data = await res.data;
-    return data;
+    return res;
   }
 }

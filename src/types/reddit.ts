@@ -24,10 +24,15 @@ export interface RedditPost {
   };
 }
 
-export interface RedditAPIResponse {
+export interface RedditAPIData {
   after: string;
   before: string;
   children: RedditPost[];
   dis: number;
   modhash: string;
+}
+
+export interface RedditAPIResponse {
+  [key: string]: any,
+  data: RedditAPIData
 }

@@ -4,9 +4,6 @@ import { RedditPost } from "../types/reddit";
 // types
 import { Page, PageAction } from "./../types/page";
 
-// services
-import RedditApiService from "./../services/redditApiService";
-
 // globals
 export const PAGE_ACTIONS = {
   SET_SUBREDDIT: "set-subreddit",
@@ -15,7 +12,7 @@ export const PAGE_ACTIONS = {
 
 export const initialPage: Page = {
   subreddit: "",
-  posts: <RedditPost[]>[],
+  posts: [] as Array<RedditPost>,
   page: 1,
   per_page: 10,
 };

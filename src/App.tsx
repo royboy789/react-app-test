@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import "./App.scss";
 
 // Types
-import { RedditAPIResponse } from "./types/reddit";
-import { Page } from "./types/page";
+// import { RedditAPIData } from "./types/reddit";
+// import { Page } from "./types/page";
 
 // Services
 import RedditApiService from "./services/redditApiService";

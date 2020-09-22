@@ -1,5 +1,4 @@
 #posts-container {
-  border-top: 1px solid black;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 25% auto;
@@ -13,6 +12,25 @@
   // Post Navigation
   .posts-nav {
     grid-column-start: 0;
+
+    .posts-navigation-pagination {
+      margin: 10px 0;
+
+      .single-pagination {
+        border: 1px solid black;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 0.8em;
+        line-height: 20px;
+        text-align: center;
+        width: 20px;
+
+        &.active {
+          background: black;
+          color: white;
+        }
+      }
+    }
 
     .posts-nav-single {
       background: #eee;

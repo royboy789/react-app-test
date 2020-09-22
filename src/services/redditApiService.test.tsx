@@ -5,7 +5,7 @@ import axios from "axios";
 jest.mock("axios");
 
 // types
-import { RedditAPIResponse } from "./../types/reddit";
+import { RedditAPIData } from "./../types/reddit";
 
 // Service
 import RedditApiService from "./redditApiService";
@@ -24,7 +24,7 @@ describe("RedditApiService", () => {
 
   describe("redditApiService::getPosts", () => {
     it("should fetch posts properly", async () => {
-      const data: RedditAPIResponse = {
+      const data: RedditAPIData = {
         after: "string",
         before: "string",
         children: [],
@@ -37,7 +37,7 @@ describe("RedditApiService", () => {
     });
 
     it("should fail posts properly", async () => {
-      const data: RedditAPIResponse = {
+      const data: RedditAPIData = {
         after: "string",
         before: "string",
         children: [],
