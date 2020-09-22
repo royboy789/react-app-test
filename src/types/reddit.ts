@@ -1,6 +1,7 @@
 export interface RedditPost {
   kind: string;
   data: {
+    [key: string]: any;
     approved_at_utc: any;
     subreddit: string;
     selftext: string;
